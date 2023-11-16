@@ -8,7 +8,7 @@
 #include <errno.h>
 #include <sys/wait.h>
 #include <limits.h>
-#include <syt/stat.h>
+#include <sys/stat.h>
 #include <fcntl.h>
 
 #define READ_BUF_SIZE 1024
