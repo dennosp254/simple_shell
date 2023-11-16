@@ -1,9 +1,9 @@
 #include "shell.h"
 /**
-  * main - Entry point
+  * main - entry point
   * @ac: arg count
   * @av: arg vector
-  * Return: Always 0 (Success) 1 (error)
+   * Return: 0 on success, 1 on error
   */
 int main(int ac, char **av)
 {
@@ -11,12 +11,13 @@ int main(int ac, char **av)
 	int fd = 2;
 
 	asm ("mov %1, %0\n\t"
-			"add $3, %0"
-			: "=r" (fd)
-			: "r" (fd));
+		"add $3, %0"
+		: "=r" (fd)
+		: "r" (fd));
+
 	if (ac == 2)
 	{
-		fd = open(av[1], 0_RDONLY);
+		fd = open(av[1], O_RDONLY);
 		if (fd == -1)
 		{
 			if (errno == EACCES)
